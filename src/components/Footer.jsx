@@ -137,7 +137,7 @@ const Footer = () => {
                   </svg>
                 </div>
                 <span className="text-gray-600 text-sm">
-                  Ruko Villa muka kuning, Tembesi, Kec. Sagulung, Kota Batam, Kepulauan Riau 29439
+                JL.Natuna, Perumahan Tiban Indah BTN Blok J No.1-2, Tiban, Tiban Indah, Kec. Sekupang, Kota Batam, Kepulauan Riau 29426
                 </span>
               </li>
               <li className="flex items-start">
@@ -147,7 +147,7 @@ const Footer = () => {
                   </svg>
                 </div>
                 <span className="text-gray-600 text-sm">
-                  +62 823-8508-9800
+                0821-9000-8929
                 </span>
               </li>
               <li className="flex items-start">
@@ -157,7 +157,7 @@ const Footer = () => {
                   </svg>
                 </div>
                 <span className="text-gray-600 text-sm">
-                  info@klinik-yamet.com
+                  ya@metbatamtiban2@gmail.com
                 </span>
               </li>
               <li className="flex items-start">
