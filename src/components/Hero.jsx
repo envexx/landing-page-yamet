@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 
-
 const Hero = () => {
   // State untuk counter animasi
   const [counter, setCounter] = useState(0);
@@ -101,20 +100,20 @@ const Hero = () => {
             <div className="relative w-full h-100 md:h-96 overflow-visible flex items-center justify-center">
               {/* Gambar utama */}
               <img
-                src="../../public/image/hero-1.png"
+                src="/image/hero-1.png"
                 alt="Anak dengan terapis di Klinik Tumbuh Kembang Yamet"
                 className="w-full h-auto object-bottom max-h-[800px] -mt-10 md:mt-10 md:object-contain"
               />
 
               {/* Lonceng pertama yang ditempatkan di atas gambar */}
               <img
-                src="../../public/image/icon/lonceng.png"
+                src="/image/icon/lonceng.png"
                 alt="Lonceng"
                 className="hidden bounce-animation md:block absolute top-3 left-1/4 z-40 w-[200px] h-[200px] md:w-[150px] md:h-[150px]"
               />
 
               <img
-                src="../../public/image/icon/roket.png"
+                src="/image/icon/roket.png"
                 alt="Lonceng Besar"
                 className="hidden roket md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-12 z-100 w-[300px] h-[300px]"
               />
