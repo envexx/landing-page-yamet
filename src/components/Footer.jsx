@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="col-span-1">
             <div className="mb-4">
               <img
-                src="../../public/logo/yamet.png"
+                src="/logo/yamet.png"
                 alt="Klinik Yamet Logo"
                 className="h-12"
               />
