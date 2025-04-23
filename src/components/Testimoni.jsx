@@ -11,7 +11,7 @@ const Testimonials = () => {
       id: 1,
       name: "Ibu Dewi Pratama",
       role: "Ibu dari Andi (6 tahun)",
-      image: "../../public/image/testimoni/foto-testi-5.jpg", // Placeholder atau path gambar sebenarnya
+      image: "/image/testimoni/foto-testi-5.jpg", // Placeholder atau path gambar sebenarnya
       rating: 5,
       quote: "Perubahan yang sangat signifikan pada anak saya setelah terapi di sini selama 3 bulan. Awalnya belum bisa bicara dengan jelas, sekarang sudah lancar berkomunikasi."
     },
@@ -19,7 +19,7 @@ const Testimonials = () => {
       id: 2,
       name: "Bapak Rudi Hartono",
       role: "Ayah dari Bella (4 tahun)",
-      image: "../../public/image/testimoni/foto-testi-4.jpg", // Placeholder atau path gambar sebenarnya
+      image: "/image/testimoni/foto-testi-4.jpg", // Placeholder atau path gambar sebenarnya
       rating: 5,
       quote: "Terapis di Yamet Batam Batu Aji sangat profesional dan sabar menangani anak saya yang hiperaktif. Sekarang perilakunya sudah jauh lebih baik dan bisa fokus lebih lama."
     },
@@ -27,7 +27,7 @@ const Testimonials = () => {
       id: 3,
       name: "Ibu Lina Wijaya",
       role: "Ibu dari Kevin (5 tahun)",
-      image: "../../public/image/testimoni/foto-testi-3.jpg", // Placeholder atau path gambar sebenarnya
+      image: "/image/testimoni/foto-testi-3.jpg", // Placeholder atau path gambar sebenarnya
       rating: 5,
       quote: "Program sensory messy play sangat membantu Kevin yang sangat sensitif terhadap tekstur. Sekarang dia bahkan menikmati bermain dengan berbagai bahan seperti pasir dan lilin."
     },
@@ -35,7 +35,7 @@ const Testimonials = () => {
       id: 4,
       name: "Ibu Rani",
       role: "Orang tua dari Zahra (7 tahun)",
-      image: "../../public/image/testimoni/foto-testi-2.jpg", // Placeholder atau path gambar sebenarnya
+      image: "/image/testimoni/foto-testi-2.jpg", // Placeholder atau path gambar sebenarnya
       rating: 5,
       quote: "Fasilitas bersih, terapis ramah, dan yang paling penting anak kami mengalami kemajuan pesat dalam belajar membaca dan menulis. Terima kasih Yamet Batam Batu Aji!"
     },
@@ -43,7 +43,7 @@ const Testimonials = () => {
       id: 5,
       name: "Ibu Sinta",
       role: "Ibu dari Dimas (3 tahun)",
-      image: "../../public/image/testimoni/foto-testi-1.jpg", // Placeholder atau path gambar sebenarnya
+      image: "/image/testimoni/foto-testi-1.jpg", // Placeholder atau path gambar sebenarnya
       rating: 4,
       quote: "Sangat senang dengan program outdoor yang diadakan secara rutin. Dimas jadi lebih berani bersosialisasi dan motorik kasarnya berkembang dengan baik."
     }
