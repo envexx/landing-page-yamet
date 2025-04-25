@@ -86,7 +86,7 @@ const Hero = () => {
             </p>
             {/* Buttons dalam flex container dengan spacing yang tepat */}
             <div className="flex flex-row space-x-3 md:space-x-4">
-              <button className="font-sf font-bold py-6 px-6 md:py-8 md:px-10 rounded-lg transition duration-300 shadow-sm text-sm md:text-base relative overflow-hidden group bg-gradient-to-br from-white to-yellow-200 hover:from-gray-100 hover:to-white flex items-center justify-between">
+              <button className="font-sf font-bold py-6 px-6 md:py-6 md:px-10 rounded-full transition duration-300 shadow-sm text-sm md:text-base relative overflow-hidden group bg-gradient-to-br from-white to-yellow-200 hover:from-gray-100 hover:to-white flex items-center justify-between border-2 border-white">
                 {/* Bagian Teks */}
                 <span>Jadwalkan Konsultasi</span>
                 {/* Bagian Panah */}
