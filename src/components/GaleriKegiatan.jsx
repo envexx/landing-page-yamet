@@ -236,7 +236,7 @@ const GaleriKegiatan = () => {
                     hoveredImage === image.id ? 'opacity-100' : 'opacity-0'
                   }`}>
                     <div className="transform transition-transform duration-300">
-                      <h3 className="text-white text-lg font-medium">{image.title}</h3>
+                      <h3 className="text-white font-sf text-lg font-medium">{image.title}</h3>
                       <button className="mt-2 bg-white/20 backdrop-blur-sm p-2 rounded-full">
                         <ZoomIn size={16} className="text-white" />
                       </button>
@@ -250,7 +250,7 @@ const GaleriKegiatan = () => {
         
         {/* Simple action button */}
         <div className="mt-10 text-center">
-          <button className="inline-flex items-center px-5 py-2 bg-yellow-300 text-white rounded-lg font-medium hover:bg-yellow-400 transition-colors shadow-sm">
+          <button className="font-sf inline-flex items-center px-5 py-2 bg-yellow-300 text-white rounded-lg font-medium hover:bg-yellow-400 transition-colors shadow-sm">
             <span>Lihat Semua Kegiatan</span>
             <MoveRight size={16} className="ml-2" />
           </button>
@@ -284,8 +284,8 @@ const GaleriKegiatan = () => {
               </div>
               
               <div className="p-5">
-                <h3 className="text-xl font-bold text-gray-800">{lightboxImage.title}</h3>
-                <p className="text-gray-600 mt-2">{lightboxImage.description}</p>
+                <h3 className="font-sf text-xl font-bold text-gray-800">{lightboxImage.title}</h3>
+                <p className="font-sf text-gray-600 mt-2">{lightboxImage.description}</p>
               </div>
             </div>
           </div>
