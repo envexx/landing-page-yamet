@@ -86,11 +86,26 @@ const Hero = () => {
             </p>
             {/* Buttons dalam flex container dengan spacing yang tepat */}
             <div className="flex flex-row space-x-3 md:space-x-4">
-              <button className="font-sf bg-yellow-400 text-white font-medium py-2.5 px-4 md:py-3 md:px-6 rounded-lg hover:bg-yellow-500 transition duration-300 shadow-sm up-transition text-sm md:text-base">
-                Jadwalkan Konsultasi
-              </button>
-              <button className="font-sf text-white border-2 border-white font-medium py-2.5 px-8 md:py-3 md:px-6 rounded-lg hover:bg-white hover:border-white hover:text-yellow-400 hover:shadow-md transition duration-300 up-transition text-sm md:text-base">
-                Layanan Kami
+              <button className="font-sf font-bold py-6 px-6 md:py-8 md:px-10 rounded-lg transition duration-300 shadow-sm text-sm md:text-base relative overflow-hidden group bg-gradient-to-br from-white to-yellow-200 hover:from-gray-100 hover:to-white flex items-center justify-between">
+                {/* Bagian Teks */}
+                <span>Jadwalkan Konsultasi</span>
+                {/* Bagian Panah */}
+                <div className="ml-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 text-gray-700 group-hover:text-gray-900 transition duration-300"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </div>
               </button>
             </div>
           </div>
