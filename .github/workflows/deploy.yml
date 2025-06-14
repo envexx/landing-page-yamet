@@ -1,0 +1,34 @@
+name: Build and Deploy React App to Plesk
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Upload via FTP to Plesk
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: 31.97.67.141
+          username: root
+          password: Ompekproduction04@
+          local-dir: build/         # GANTI ke 'dist/' jika pakai Vite
+          server-dir: httpdocs/
