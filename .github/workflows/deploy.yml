@@ -28,7 +28,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: 31.97.67.141
-          username: root
+          username: yamet
           password: Ompekproduction04@
           local-dir: dist/         # GANTI ke 'dist/' jika pakai Vite
           server-dir: httpdocs/
