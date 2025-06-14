@@ -157,7 +157,7 @@ const Footer = () => {
                   </svg>
                 </div>
                 <span className="text-gray-600 text-sm">
-                  ya@metbatamtiban2@gmail.com
+                  yametbatamtiban2@gmail.com
                 </span>
               </li>
               <li className="flex items-start">
