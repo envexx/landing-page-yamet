@@ -35,7 +35,10 @@ const Header = () => {
         <div className="flex items-center justify-between px-6 py-3">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <img src="/logo/yamet.png" alt="Logo" className="h-10" />
+            <picture>
+              <source srcSet="/logo/yamet.webp" type="image/webp" />
+              <img src="/logo/yamet.png" alt="Logo" className="h-10" />
+            </picture>
           </div>
 
           {/* Hamburger Button - Mobile with Animation */}

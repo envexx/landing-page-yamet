@@ -12,7 +12,7 @@ export default function Layanan() {
       bgColor: "bg-rose-50",
       accentColor: "bg-rose-100",
       textColor: "text-rose-500",
-      imagePath: "/image/layanan-1.png" // Path gambar yang sebenarnya
+      imagePath: "/image/layanan-1.webp" // Path gambar yang sebenarnya
     },
     {
       icon: <BookOpen size={24} />,
@@ -21,7 +21,7 @@ export default function Layanan() {
       bgColor: "bg-blue-50",
       accentColor: "bg-blue-100",
       textColor: "text-blue-500",
-      imagePath: "/image/layanan-2.png" // Path gambar yang sebenarnya
+      imagePath: "/image/layanan-2.webp" // Path gambar yang sebenarnya
     },
     {
       icon: <Activity size={24} />,
@@ -30,7 +30,7 @@ export default function Layanan() {
       bgColor: "bg-green-50",
       accentColor: "bg-green-100",
       textColor: "text-green-500",
-      imagePath: "/image/layanan-3.png" // Path gambar yang sebenarnya
+      imagePath: "/image/layanan-3.webp" // Path gambar yang sebenarnya
     },
     {
       icon: <Users size={24} />,
@@ -39,7 +39,7 @@ export default function Layanan() {
       bgColor: "bg-amber-50",
       accentColor: "bg-amber-100",
       textColor: "text-amber-500",
-      imagePath: "/image/layanan-4.png" // Path gambar yang sebenarnya
+      imagePath: "/image/layanan-4.webp" // Path gambar yang sebenarnya
     },
     {
       icon: <Clock size={24} />,
@@ -48,7 +48,7 @@ export default function Layanan() {
       bgColor: "bg-purple-50",
       accentColor: "bg-purple-100",
       textColor: "text-purple-500",
-      imagePath: "/image/layanan-5.png" // Path gambar yang sebenarnya
+      imagePath: "/image/layanan-5.webp" // Path gambar yang sebenarnya
     },
     {
       icon: <Award size={24} />,
@@ -57,7 +57,7 @@ export default function Layanan() {
       bgColor: "bg-cyan-50",
       accentColor: "bg-cyan-100",
       textColor: "text-cyan-500",
-      imagePath: "/image/layanan-6.png" // Path gambar yang sebenarnya
+      imagePath: "/image/layanan-6.webp" // Path gambar yang sebenarnya
     }
   ];
 
@@ -119,11 +119,10 @@ export default function Layanan() {
                 {/* Image container - menggunakan 40% lebar */}
                 <div className="w-2/5 relative">
                   {/* Gambar terapis - pastikan ini gambar PNG dengan background transparan */}
-                  <img 
-                    src={item.imagePath} 
-                    alt={item.title}
-                    className="h-full w-full min-h-[300px] min-w-[250px] -ml-11 object-contain md:-ml-14 md:max-h-[200px] md:p-4 md:min-w-[250px] lg:-ml-14" 
-                  />
+                  <picture>
+                    <source srcSet={item.imagePath} type="image/webp" />
+                    <img src={item.imagePath.replace('.webp', '.png')} alt={item.title} className="h-full w-full min-h-[300px] min-w-[250px] -ml-11 object-contain md:-ml-14 md:max-h-[200px] md:p-4 md:min-w-[250px] lg:-ml-14" />
+                  </picture>
                 </div>
               </div>
             </div>

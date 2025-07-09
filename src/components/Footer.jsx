@@ -12,11 +12,10 @@ const Footer = () => {
           {/* Column 1: Logo and brief description */}
           <div className="col-span-1">
             <div className="mb-4">
-              <img
-                src="/logo/yamet.png"
-                alt="Klinik Yamet Logo"
-                className="h-12"
-              />
+              <picture>
+                <source srcSet="/logo/yamet.webp" type="image/webp" />
+                <img src="/logo/yamet.png" alt="Klinik Yamet Logo" className="h-12" />
+              </picture>
             </div>
             <p className="text-gray-600 text-sm mb-6">
               Layanan Terapi dan Konsultasi Tumbuh Kembang Anak oleh Tim Profesional Berpengalaman di Batam Tiban.

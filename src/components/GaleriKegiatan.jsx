@@ -12,7 +12,7 @@ const GaleriKegiatan = () => {
   const galleryItems = [
     {
       id: 1,
-      src: "/image/galery/ash-gerlach-YF6Xa6G98H4-unsplash.jpg", // Landscape
+      src: "/image/galery/ash-gerlach-YF6Xa6G98H4-unsplash.webp", // Landscape
       alt: "Terapi Sensori",
       title: "Sensory Messy Play",
       description: "Aktivitas terapi sensorik untuk meningkatkan perkembangan anak",
@@ -20,7 +20,7 @@ const GaleriKegiatan = () => {
     },
     {
       id: 2,
-      src: "/image/galery/bambi-corro-fn3puWB0pHY-unsplash.jpg", // Portrait
+      src: "/image/galery/bambi-corro-fn3puWB0pHY-unsplash.webp", // Portrait
       alt: "Terapi Okupasi",
       title: "Terapi Okupasi",
       description: "Melatih kemampuan motorik halus dan koordinasi tangan-mata",
@@ -28,7 +28,7 @@ const GaleriKegiatan = () => {
     },
     {
       id: 3,
-      src: "/image/galery/myles-tan-WNAO036c6FM-unsplash.jpg", // Landscape
+      src: "/image/galery/myles-tan-WNAO036c6FM-unsplash.webp", // Landscape
       alt: "Terapi Wicara",
       title: "Terapi Wicara",
       description: "Sesi terapi wicara individual dengan terapis berpengalaman",
@@ -36,7 +36,7 @@ const GaleriKegiatan = () => {
     },
     {
       id: 4,
-      src: "/image/galery/nappy-oxBV3sO9SmQ-unsplash.jpg", // Landscape
+      src: "/image/galery/nappy-oxBV3sO9SmQ.webp", // Landscape
       alt: "Terapi Perilaku",
       title: "Terapi Perilaku",
       description: "Pengembangan perilaku positif dan kemandirian anak",
@@ -44,7 +44,7 @@ const GaleriKegiatan = () => {
     },
     {
       id: 5,
-      src: "/image/galery/sigmund-OV44gxH71DU-unsplash.jpg", // Portrait
+      src: "/image/galery/sigmund-OV44gxH71DU.webp", // Portrait
       alt: "Aktivitas Kelompok",
       title: "Aktivitas Kelompok",
       description: "Kegiatan kelompok untuk mengembangkan keterampilan sosial",
@@ -52,7 +52,7 @@ const GaleriKegiatan = () => {
     },
     {
       id: 6,
-      src: "/image/galery/stephen-andrews-u0zTce7KNlY-unsplash.jpg", // Landscape
+      src: "/image/galery/stephen-andrews-u0zTce7KNlY.webp", // Landscape
       alt: "Terapi Seni",
       title: "Terapi Seni",
       description: "Mengembangkan ekspresi kreatif melalui seni",
@@ -60,7 +60,7 @@ const GaleriKegiatan = () => {
     },
     {
       id: 7,
-      src: "/image/galery/nappy-oxBV3sO9SmQ-unsplash.jpg", // Landscape
+      src: "/image/galery/nappy-oxBV3sO9SmQ.webp", // Landscape
       alt: "Terapi Musik",
       title: "Terapi Musik",
       description: "Stimulasi perkembangan melalui ritme dan melodi",
@@ -68,7 +68,7 @@ const GaleriKegiatan = () => {
     },
     {
       id: 8,
-      src: "/image/galery/stephen-andrews-u0zTce7KNlY-unsplash.jpg", // Portrait
+      src: "/image/galery/stephen-andrews-u0zTce7KNlY.webp", // Portrait
       alt: "Terapi Bermain",
       title: "Terapi Bermain",
       description: "Meningkatkan keterampilan sosial melalui aktivitas bermain",
@@ -76,7 +76,7 @@ const GaleriKegiatan = () => {
     },
     {
       id: 9,
-      src: "/image/galery/sigmund-OV44gxH71DU-unsplash.jpg", // Landscape
+      src: "/image/galery/sigmund-OV44gxH71DU.webp", // Landscape
       alt: "Stimulasi Motorik",
       title: "Stimulasi Motorik",
       description: "Latihan pengembangan motorik kasar dan halus",
@@ -84,7 +84,7 @@ const GaleriKegiatan = () => {
     },
     {
       id: 10,
-      src: "/image/galery/ash-gerlach-YF6Xa6G98H4-unsplash.jpg", // Landscape
+      src: "/image/galery/ash-gerlach-YF6Xa6G98H4-unsplash.webp", // Landscape
       alt: "Terapi Integrasi Sensori",
       title: "Integrasi Sensori",
       description: "Kegiatan integrasi sensori untuk keseimbangan sistem sensorik",
@@ -192,11 +192,10 @@ const GaleriKegiatan = () => {
                 <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                   {/* Fixed image container with aspect ratio */}
                   <div className="relative h-48 overflow-hidden">
-                    <img 
-                      src={image.src} 
-                      alt={image.alt}
-                      className="w-full h-full object-cover"
-                    />
+                    <picture>
+                      <source srcSet={image.src} type="image/webp" />
+                      <img src={image.src.replace('.webp', '.jpg')} alt={image.alt} className="w-full h-full object-cover" />
+                    </picture>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-3">
                       <h3 className="text-white text-base font-medium line-clamp-1">{image.title}</h3>
                     </div>
@@ -225,11 +224,10 @@ const GaleriKegiatan = () => {
               >
                 {/* Fixed height container for all images */}
                 <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={image.src} 
-                    alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-105"
-                  />
+                  <picture>
+                    <source srcSet={image.src} type="image/webp" />
+                    <img src={image.src.replace('.webp', '.jpg')} alt={image.alt} className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-105" />
+                  </picture>
                   
                   {/* Simple hover overlay */}
                   <div className={`absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4 transition-opacity duration-300 ${
@@ -276,11 +274,10 @@ const GaleriKegiatan = () => {
             
             <div className="bg-white rounded-lg overflow-hidden shadow-xl">
               <div className="relative">
-                <img 
-                  src={lightboxImage.src} 
-                  alt={lightboxImage.alt} 
-                  className="w-full object-contain max-h-[70vh]"
-                />
+                <picture>
+                  <source srcSet={lightboxImage.src} type="image/webp" />
+                  <img src={lightboxImage.src.replace('.webp', '.jpg')} alt={lightboxImage.alt} className="w-full object-contain max-h-[70vh]" />
+                </picture>
               </div>
               
               <div className="p-5">
