@@ -29,12 +29,6 @@ const Keunggulan = () => {
       color: "yellow"
     },
     {
-      icon: <Sun size={24} />,
-      title: "Outdoor Program",
-      description: "Mengadakan aktivitas outdoor secara rutin guna memberikan stimulus yang kaya untuk anak-anak.",
-      color: "purple"
-    },
-    {
       icon: <Palette size={24} />,
       title: "Exclusive Program: Sensory Messy Play",
       description: "Mengembangkan keterampilan sensorik anak dengan bermain dengan bahan-bahan yang beragam dalam lingkungan yang terkontrol.",

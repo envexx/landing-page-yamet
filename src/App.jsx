@@ -8,18 +8,30 @@ import FAQSection from "./components/Faq"
 import Footer from "./components/Footer"
 
 function App() {
-
-
   return (
     <>
       <Header />
-      <Hero />
-      <Layanan />
-      <Keunggulan />
-      <GaleriKegiatan />
-      <Testimonials />
-      <FAQSection />
-      <Footer />
+      <section id="home">
+        <Hero />
+      </section>
+      <section id="layanan">
+        <Layanan />
+      </section>
+      <section id="keunggulan">
+        <Keunggulan />
+      </section>
+      <section id="galeri">
+        <GaleriKegiatan />
+      </section>
+      <section id="testimoni">
+        <Testimonials />
+      </section>
+      <section id="faq">
+        <FAQSection />
+      </section>
+      <section id="about">
+        <Footer />
+      </section>
     </>
   )
 }
