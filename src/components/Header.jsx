@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react"; // Pastikan lucide-react terinstall
+import { Link, useLocation } from "react-router-dom";
+import { WHATSAPP_LINK } from "../constants/links";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   // Effect untuk mendeteksi scroll
   useEffect(() => {
@@ -38,14 +41,14 @@ const Header = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 w-full z-50 px-4 pt-4">
+    <div className="fixed top-0 left-0 right-0 z-50 px-3 sm:px-4 lg:px-6 pt-3 pb-2">
       <header
-        className={`w-full max-w-7xl mx-auto rounded-xl transition-all duration-300 ${isScrolled
-            ? "bg-white/30 backdrop-blur-[10px] shadow-sm border-[1px] border-white"
-            : "bg-white/80 backdrop-blur-md shadow-sm border-1"
+        className={`mx-auto w-full max-w-screen-xl rounded-xl transition-all duration-300 ${isScrolled
+            ? "bg-white/60 backdrop-blur-[10px] shadow-sm border border-white/70"
+            : "bg-white/90 backdrop-blur-md shadow-sm"
           }`}
       >
-        <div className="flex items-center justify-between px-6 py-3">
+        <div className="flex flex-wrap md:flex-nowrap items-center justify-between gap-3 px-4 sm:px-6 lg:px-8 py-3">
           {/* Logo */}
           <div className="flex-shrink-0">
             <picture>
@@ -55,7 +58,7 @@ const Header = () => {
           </div>
 
           {/* Hamburger Button - Mobile with Animation */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="relative w-10 h-10 flex items-center justify-center focus:outline-none group"
@@ -80,17 +83,17 @@ const Header = () => {
           </div>
 
           {/* Nav Items - Desktop */}
-          <nav className="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-600">
-            <button onClick={() => scrollToSection('home')} className="font-sf text-black font-semibold hover:text-yellow-500 transition-colors">Home</button>
-            <button onClick={() => scrollToSection('layanan')} className="font-sf hover:text-yellow-500 transition-colors">Layanan</button>
-            <button onClick={() => scrollToSection('faq')} className="font-sf hover:text-yellow-500 transition-colors">FAQ</button>
-            <button onClick={() => scrollToSection('galeri')} className="font-sf hover:text-yellow-500 transition-colors">Blog</button>
-            <button onClick={() => scrollToSection('about')} className="font-sf hover:text-yellow-500 transition-colors">About Us</button>
+          <nav className="hidden md:flex flex-1 flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm lg:text-base font-medium text-gray-600">
+            <Link to="/" className={`font-sf transition-colors ${location.pathname === '/' ? 'text-amber-500 font-bold' : 'hover:text-yellow-500'}`}>Home</Link>
+            <Link to="/layanan" className={`font-sf transition-colors ${location.pathname === '/layanan' ? 'text-amber-500 font-bold' : 'hover:text-yellow-500'}`}>Layanan</Link>
+            <Link to="/galeri" className={`font-sf transition-colors ${location.pathname === '/galeri' ? 'text-amber-500 font-bold' : 'hover:text-yellow-500'}`}>Galeri</Link>
+            <Link to="/blog" className={`font-sf transition-colors ${location.pathname === '/blog' ? 'text-amber-500 font-bold' : 'hover:text-yellow-500'}`}>Blog</Link>
+            <Link to="/#about" className={`font-sf transition-colors`}>About Us</Link>
           </nav>
 
           {/* Konsultasi Button - Desktop */}
-          <div className="hidden md:block">
-            <a href="/konsultasi">
+          <div className="hidden md:block flex-shrink-0">
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
               <button className="bg-yellow-400 font-sf text-md font-medium hover:bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md">
                 Konsultasi Sekarang
               </button>
@@ -100,21 +103,24 @@ const Header = () => {
 
         {/* Mobile Menu with Smooth Animation */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen
-              ? "max-h-78 opacity-100"
+          className={`md:hidden overflow-hidden transition-[max-height] transition-opacity duration-300 ease-in-out ${isOpen
+              ? "max-h-[480px] opacity-100"
               : "max-h-0 opacity-0"
             }`}
         >
-          <div className="p-4 space-y-2 text-sm text-gray-700 border-t border-gray-100 bg-white/90 backdrop-blur-md rounded-b-xl">
-            <button onClick={() => scrollToSection('home')} className="font-sf block w-full text-left px-4 py-2 font-bold hover:bg-gray-50 rounded-lg transition-all duration-200">Home</button>
-            <button onClick={() => scrollToSection('layanan')} className="font-sf block w-full text-left px-4 py-2 hover:bg-gray-50 rounded-lg transition-all duration-200">Layanan</button>
-            <button onClick={() => scrollToSection('faq')} className="font-sf block w-full text-left px-4 py-2 hover:bg-gray-50 rounded-lg transition-all duration-200">FAQ</button>
-            <button onClick={() => scrollToSection('galeri')} className="font-sf block w-full text-left px-4 py-2 hover:bg-gray-50 rounded-lg transition-all duration-200">Blog</button>
-            <button onClick={() => scrollToSection('about')} className="font-sf block w-full text-left px-4 py-2 hover:bg-gray-50 rounded-lg transition-all duration-200">About Us</button>
-            <a href="/konsultasi">
-              <button className="block w-full bg-yellow-400 hover:bg-yellow-500 text-white font-sf font-semibold py-2 px-4 rounded-lg mt-4 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md">
-                Konsultasi Sekarang
-              </button>
+          <div className="p-4 space-y-2 text-sm text-gray-700 border-t border-gray-100 bg-white/95 backdrop-blur-md rounded-b-xl">
+            <Link to="/" className={`font-sf block w-full text-left px-4 py-2 font-bold rounded-lg transition-all duration-200 ${location.pathname === '/' ? 'text-amber-500' : 'hover:bg-gray-50'}`}>Home</Link>
+            <Link to="/layanan" className={`font-sf block w-full text-left px-4 py-2 rounded-lg transition-all duration-200 ${location.pathname === '/layanan' ? 'text-amber-500 font-bold bg-amber-50' : 'hover:bg-gray-50'}`}>Layanan</Link>
+            <Link to="/galeri" className={`font-sf block w-full text-left px-4 py-2 rounded-lg transition-all duration-200 ${location.pathname === '/galeri' ? 'text-amber-500 font-bold bg-amber-50' : 'hover:bg-gray-50'}`}>Galeri</Link>
+            <Link to="/blog" className={`font-sf block w-full text-left px-4 py-2 rounded-lg transition-all duration-200 ${location.pathname === '/blog' ? 'text-amber-500 font-bold bg-amber-50' : 'hover:bg-gray-50'}`}>Blog</Link>
+            <Link to="/#about" className="font-sf block w-full text-left px-4 py-2 rounded-lg transition-all duration-200 hover:bg-gray-50">About Us</Link>
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full bg-yellow-400 hover:bg-yellow-500 text-white font-sf font-semibold py-2 px-4 rounded-lg mt-4 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md text-center"
+            >
+              Konsultasi Sekarang
             </a>
           </div>
         </div>

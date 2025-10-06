@@ -66,17 +66,16 @@ export default function Layanan() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           {/* Label kecil dengan border tipis */}
-          <span className="font-sf inline-block px-4 py-1 text-xs tracking-wider font-medium text-gray-600 border border-gray-200 rounded-full mb-4">
-            Nikmati Layanan Kami
+          <span className="font-sf inline-block px-4 py-1 text-xs tracking-wider font-medium text-gray-600 border border-gray-200 rounded-full mb-4 uppercase">
+            Solusi Tumbuh Kembang Yamet
           </span>
           
           {/* Judul dengan warna amber */}
-          <h2 className="font-sf text-3xl md:text-4xl font-bold mb-4 text-amber-400">Layanan Kami</h2>
+          <h2 className="font-sf text-4xl md:text-5xl font-bold mb-6 text-gray-800">Pendampingan Profesional & Terintegrasi</h2>
           
           {/* Deskripsi */}
           <p className="font-sf p-2 text-sm md:text-base text-gray-500 max-w-xl mx-auto">
-            Klinik Tumbuh Kembang Anak Yamet Batam Tiban menyediakan layanan
-            terbaik untuk mendukung perkembangan optimal anak Anda
+            Tim multidisiplin kami menyiapkan program asesmen dan terapi yang terkoordinasi agar setiap anak mendapatkan dukungan yang paling relevan dengan kebutuhannya.
           </p>
         </div>
 

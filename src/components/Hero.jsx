@@ -1,50 +1,43 @@
 import React, { useState, useEffect, useRef } from "react";
+import { WHATSAPP_LINK } from "../constants/links";
 
 const Hero = () => {
-  // State untuk counter animasi
   const [counter, setCounter] = useState(0);
   const counterRef = useRef(null);
-  const targetValue = 500; // Nilai target untuk counter
-  const duration = 2000; // Durasi animasi dalam ms
+  const targetValue = 500;
+  const duration = 2000;
 
   useEffect(() => {
+    const node = counterRef.current;
+    if (!node) return undefined;
+
     const options = {
       root: null,
-      rootMargin: '0px',
-      threshold: 0.1
+      rootMargin: "0px",
+      threshold: 0.2,
     };
 
-    // Callback untuk Intersection Observer
     const handleIntersect = (entries, observer) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Mulai animasi counter saat elemen terlihat
           animateCounter();
           observer.unobserve(entry.target);
         }
       });
     };
 
-    // Buat Intersection Observer
     const observer = new IntersectionObserver(handleIntersect, options);
-
-    // Amati elemen counter
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
-    }
+    observer.observe(node);
 
     return () => {
-      if (counterRef.current) {
-        observer.unobserve(counterRef.current);
-      }
+      observer.unobserve(node);
     };
   }, []);
 
-  // Fungsi untuk animasi counter
   const animateCounter = () => {
     const start = 0;
     const end = targetValue;
-    const increment = end / (duration / 16); // Perkiraan 60fps
+    const increment = end / (duration / 16);
     let current = start;
 
     const updateCounter = () => {
@@ -62,106 +55,156 @@ const Hero = () => {
   };
 
   return (
-    <section className="w-full relative overflow-hidden px-6 md:py-20 md:px-8 min-h-[600px]">
-      {/* Simple 2-way Gradient Background - white at top, light yellow at bottom */}
+    <section className="relative overflow-hidden w-full bg-gradient-to-br from-amber-50 via-white to-orange-50">
+      <div className="pointer-events-none absolute left-1/2 top-[-35%] h-[320px] w-[120%] -translate-x-1/2 bg-amber-100/70 blur-[140px]" aria-hidden="true" />
+      <div className="pointer-events-none absolute left-1/2 bottom-[-40%] h-[360px] w-[130%] -translate-x-1/2 bg-orange-200/60 blur-[180px]" aria-hidden="true" />
+      <div className="pointer-events-none absolute left-0 top-1/2 hidden h-[240px] w-[320px] -translate-y-1/2 bg-gradient-to-br from-amber-100/60 via-transparent to-transparent blur-[120px] lg:block" aria-hidden="true" />
 
+      <div className="relative mx-auto flex max-w-7xl flex-col px-6 pt-28 pb-20 lg:flex-row lg:items-center lg:justify-between lg:px-8 xl:px-10">
+        <div className="max-w-2xl space-y-8 lg:max-w-xl xl:max-w-2xl">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/70 px-5 py-2 text-sm font-semibold uppercase tracking-wide text-amber-600 shadow-sm backdrop-blur">
+            Klinik Yamet Batam Tiban
+          </span>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-yellow-300 to-white z-10">
-        <div className="absolute inset-0 bg-gradient-to-tr from-yellow-30/50 to-white/100 animate-gradient z-0"></div>
-      </div>
+          <h1 className="font-sf text-4xl font-bold leading-tight tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+            Pendampingan Profesional untuk <span className="text-amber-500">Tumbuh Kembang Optimal</span>
+          </h1>
 
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Container for hero content - stack vertically on mobile, side by side on larger screens */}
-        <div className="flex flex-col py-10 mt-6 md:flex-row md:items-center md:justify-between md:space-x-8">
+          <p className="font-sf text-base text-gray-600 sm:text-lg lg:text-xl">
+            Dapatkan asesmen dan terapi terintegrasi dari tim ahli Yamet Batam Tiban. Fokus kami pada kebutuhan unik setiap anak membantu keluarga meraih kemajuan nyata dan konsisten.
+          </p>
 
-          {/* Text content - takes full width on mobile, half on larger screens */}
-          <div className="w-full md:w-1/2 mb-10 md:mb-0 py-10">
-            <h1 className="font-sf text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-              Klinik Tumbuh Kembang Yamet Batam Tiban
-            </h1>
-            <p className="font-sf text-gray-600 mb-8 text-base md:text-lg leading-relaxed">
-              Layanan Terapi dan Konsultasi Tumbuh Kembang Anak oleh Tim Profesional
-              Berpengalaman. Kami menyediakan pendekatan holistik untuk membantu anak Anda
-              mencapai potensi maksimal.
-            </p>
-            {/* Buttons dalam flex container dengan spacing yang tepat */}
-            <div className="flex flex-row space-x-3 md:space-x-4">
-              <a href="/konsultasi" className="font-sf font-bold py-6 px-6 md:py-6 md:px-10 rounded-full transition duration-300 shadow-sm text-sm md:text-base relative overflow-hidden group bg-gradient-to-br from-white to-yellow-200 hover:from-gray-100 hover:to-white flex items-center justify-between border-2 border-white">
-                {/* Bagian Teks */}
-                <span>Jadwalkan Konsultasi</span>
-                {/* Bagian Panah */}
-                <div className="ml-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-gray-700 group-hover:text-gray-900 transition duration-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
-              </a>
-            </div>
+          <div className="flex flex-wrap items-center gap-4">
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-orange-400 px-7 py-4 font-sf text-base font-semibold text-white shadow-lg shadow-amber-300/40 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <span>Jadwalkan Konsultasi</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </a>
+
+            <a
+              href="#layanan"
+              className="inline-flex items-center gap-2 font-sf text-base font-semibold text-gray-700 transition-colors duration-300 hover:text-amber-600"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M21 12a9 9 0 1 1-9-9" />
+                <path d="M21 3 12 12" />
+              </svg>
+              <span>Lihat Layanan Kami</span>
+            </a>
           </div>
 
-          <div className="w-full md:w-1/2">
-            {/* Kontainer utama dengan posisi relatif */}
-            <div className="relative w-full h-100 md:h-96 overflow-visible flex items-center justify-center">
-              {/* Gambar utama */}
-              <picture>
-                <source srcSet="/image/hero-1.webp" type="image/webp" />
-                <img src="/image/hero-1.png" alt="Anak dengan terapis di Klinik Tumbuh Kembang Yamet" className="w-full h-auto object-bottom max-h-[800px] -mt-10 md:mt-10 md:object-contain" />
-              </picture>
-
-              {/* Lonceng pertama yang ditempatkan di atas gambar */}
-              <picture>
-                <source srcSet="/image/icon/lonceng.webp" type="image/webp" />
-                <img src="/image/icon/lonceng.png" alt="Lonceng" className="hidden bounce-animation md:block absolute top-3 left-1/4 z-40 w-[200px] h-[200px] md:w-[150px] md:h-[150px]" />
-              </picture>
-
-              <picture>
-                <source srcSet="/image/icon/roket.webp" type="image/webp" />
-                <img src="/image/icon/roket.png" alt="Lonceng Besar" className="hidden roket md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-12 z-100 w-[300px] h-[300px]" />
-              </picture>
-
-              {/* Lonceng kedua yang lebih besar, diputar, dan melewati batas section */}
-
-
-              {/* Overlay warna untuk efek desain */}
-              {/* <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-yellow-400/40 to-transparent"></div> */}
-
-              {/* Indikator kepercayaan dengan animasi counter */}
-              <div className="absolute bottom-2 left-4 bg-white bg-opacity-90 px-4 py-2 rounded-lg">
-                <p className="text-sm font-medium text-gray-800" ref={counterRef}>
-                  <span className="font-bold">{counter}+ </span>
-                  Keluarga Percaya
+          <div className="flex flex-wrap gap-6">
+            <div className="flex items-center gap-4 rounded-2xl bg-white/80 px-6 py-4 shadow-sm backdrop-blur">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m5 12 4 4 10-10" />
+                </svg>
+              </div>
+              <div className="space-y-1">
+                <p className="font-sf text-sm font-medium uppercase tracking-wide text-gray-500">Keluarga Percaya</p>
+                <p ref={counterRef} className="font-sf text-3xl font-semibold text-gray-900">
+                  {counter}+
                 </p>
+              </div>
+            </div>
+
+            <div className="flex max-w-xs items-center gap-4 rounded-2xl bg-white/80 px-6 py-4 shadow-sm backdrop-blur">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M22 16.92a5 5 0 0 1-5 5 10.66 10.66 0 0 1-4.75-1.18l-5.51 1.82 1.82-5.51A10.66 10.66 0 0 1 7.05 8.1a5 5 0 1 1 9.9 0 10.66 10.66 0 0 1 4.51 8.82Z" />
+                </svg>
+              </div>
+              <div className="space-y-1">
+                <p className="font-sf text-sm font-medium uppercase tracking-wide text-gray-500">Respon Cepat</p>
+                <p className="font-sf text-lg font-semibold text-gray-900">Konsultasi via WhatsApp</p>
               </div>
             </div>
           </div>
         </div>
 
+        <div className="relative mt-12 w-full max-w-xl self-stretch lg:mt-0 lg:max-w-2xl">
+          <div className="relative mx-auto flex w-full max-w-2xl items-center justify-center">
+            <picture>
+              <source srcSet="/image/hero-1.webp" type="image/webp" />
+              <img
+                src="/image/hero-1.png"
+                alt="Anak menjalani sesi terapi di Yamet Batam Tiban"
+                className="w-full max-h-[560px] object-contain drop-shadow-[0_28px_60px_rgba(252,211,77,0.35)]"
+              />
+            </picture>
+          </div>
+
+          <picture>
+            <source srcSet="/image/icon/lonceng.webp" type="image/webp" />
+            <img
+              src="/image/icon/lonceng.png"
+              alt="Ikon anak ceria"
+              className="absolute -top-10 right-8 hidden w-32 animate-bounce md:block lg:w-36"
+            />
+          </picture>
+
+          <picture>
+            <source srcSet="/image/icon/roket.webp" type="image/webp" />
+            <img
+              src="/image/icon/roket.png"
+              alt="Ikon roket pertumbuhan"
+              className="absolute bottom-[-40px] left-[-20px] hidden w-40 rotate-[12deg] md:block lg:w-48"
+            />
+          </picture>
+
+          <div className="absolute -bottom-10 right-5 hidden w-full max-w-xs rounded-3xl bg-white/90 p-5 shadow-xl shadow-amber-200/60 backdrop-blur md:block">
+            <p className="font-sf text-xs font-semibold uppercase tracking-wider text-amber-500">Program Terintegrasi</p>
+            <p className="font-sf mt-2 text-sm text-gray-600">
+              Sesi asesmen, terapi individual, dan dukungan keluarga dalam satu rangkaian terencana.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
-
-// Tambahkan kode CSS berikut ke file CSS global atau tailwind.config.js
-// @keyframes gradient {
-//   0% { background-position: 0% 50%; }
-//   50% { background-position: 100% 50%; }
-//   100% { background-position: 0% 50%; }
-// }
-// 
-// .animate-gradient {
-//   background-size: 200% 200%;
-//   animation: gradient 6s ease infinite;
-// }
 
 export default Hero;

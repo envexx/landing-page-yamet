@@ -2,43 +2,45 @@ import { useState } from 'react';
 import { 
   UserCheck, 
   Heart, 
-  Droplets, 
-  Sun, 
+  Shield, 
   Palette, 
-  Award 
+  Award,
+  Star
 } from 'lucide-react';
 
 const Keunggulan = () => {
   const keunggulan = [
     {
-      icon: <UserCheck size={24} />,
-      title: "Individualized Program",
-      description: "Program terapi yang dirancang sesuai kebutuhan masing-masing anak, menjadikan tumbuh kembang anak lebih optimal.",
+      icon: <UserCheck size={40} />,
+      title: "Program Individual",
+      subtitle: "Disesuaikan Khusus untuk Anak Anda",
+      description: "Setiap anak unik. Program terapi kami dirancang khusus sesuai kebutuhan dan kondisi masing-masing anak untuk hasil yang optimal.",
+      stats: "100% Personalized",
       color: "blue"
     },
     {
-      icon: <Heart size={24} />,
-      title: "Corporate Social Responsibility",
-      description: "Berkomitmen untuk bertanggung jawab secara sosial pada masyarakat dan lingkungan dengan beragam kegiatan positif.",
+      icon: <Award size={40} />,
+      title: "Berpengalaman & Terpercaya",
+      subtitle: "Ribuan Keluarga Telah Merasakan Manfaatnya",
+      description: "Dengan lebih dari 530 ribu jam terapi dan 16.000+ pasien yang telah ditangani, kami adalah pilihan terpercaya untuk tumbuh kembang anak.",
+      stats: "16,000+ Pasien",
       color: "green"
     },
     {
-      icon: <Droplets size={24} />,
-      title: "Kebersihan Terjaga",
-      description: "Kebersihan klinik selalu terjaga, menerapkan konsep ruangan tanpa alas kaki, dan penggunaan air purifier.",
-      color: "yellow"
+      icon: <Shield size={40} />,
+      title: "Standar Kebersihan Tinggi",
+      subtitle: "Lingkungan Aman & Higienis",
+      description: "Klinik dengan konsep tanpa alas kaki, air purifier di setiap ruangan, dan protokol kebersihan ketat untuk keamanan anak Anda.",
+      stats: "100% Hygienic",
+      color: "cyan"
     },
     {
-      icon: <Palette size={24} />,
-      title: "Exclusive Program: Sensory Messy Play",
-      description: "Mengembangkan keterampilan sensorik anak dengan bermain dengan bahan-bahan yang beragam dalam lingkungan yang terkontrol.",
-      color: "pink"
-    },
-    {
-      icon: <Award size={24} />,
-      title: "Experienced",
-      description: "Hingga Januari 2025, memberikan lebih dari 530 ribu jam terapi dan menangani lebih dari 16.000 pasien dengan berbagai kasus tumbuh kembang.",
-      color: "red"
+      icon: <Palette size={40} />,
+      title: "Sensory Messy Play Eksklusif",
+      subtitle: "Program Inovatif untuk Stimulasi Sensorik",
+      description: "Program eksklusif yang mengembangkan keterampilan sensorik anak melalui bermain terkontrol dengan berbagai tekstur dan bahan.",
+      stats: "Program Eksklusif",
+      color: "purple"
     }
   ];
 
@@ -46,40 +48,32 @@ const Keunggulan = () => {
   const getColorClasses = (color) => {
     const colorMap = {
       blue: {
-        bg: "bg-blue-500",
+        bg: "from-blue-500 to-blue-600",
         light: "bg-blue-50",
-        text: "text-blue-500",
-        border: "border-blue-200"
+        text: "text-blue-600",
+        border: "border-blue-100",
+        accent: "bg-blue-500"
       },
       green: {
-        bg: "bg-green-500",
+        bg: "from-green-500 to-green-600",
         light: "bg-green-50",
-        text: "text-green-500",
-        border: "border-green-200"
+        text: "text-green-600",
+        border: "border-green-100",
+        accent: "bg-green-500"
       },
-      yellow: {
-        bg: "bg-yellow-500",
-        light: "bg-yellow-50",
-        text: "text-yellow-500", 
-        border: "border-yellow-200"
+      cyan: {
+        bg: "from-cyan-500 to-cyan-600",
+        light: "bg-cyan-50",
+        text: "text-cyan-600",
+        border: "border-cyan-100",
+        accent: "bg-cyan-500"
       },
       purple: {
-        bg: "bg-purple-500",
+        bg: "from-purple-500 to-purple-600",
         light: "bg-purple-50",
-        text: "text-purple-500",
-        border: "border-purple-200"
-      },
-      pink: {
-        bg: "bg-pink-500",
-        light: "bg-pink-50",
-        text: "text-pink-500",
-        border: "border-pink-200"
-      },
-      red: {
-        bg: "bg-red-500",
-        light: "bg-red-50",
-        text: "text-red-500",
-        border: "border-red-200"
+        text: "text-purple-600",
+        border: "border-purple-100",
+        accent: "bg-purple-500"
       }
     };
     
@@ -87,56 +81,97 @@ const Keunggulan = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          {/* Label kecil dengan border tipis */}
-          <span className="font-sf inline-block px-4 py-1 text-xs tracking-wider font-medium text-gray-600 border border-gray-200 rounded-full mb-4">
-            Kualitas Terbaik
+    <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-100 rounded-full opacity-20 -mr-48 -mt-48"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100 rounded-full opacity-20 -ml-48 -mb-48"></div>
+      
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <span className="font-sf inline-block px-6 py-2 text-sm tracking-wider font-medium text-amber-700 bg-amber-100 rounded-full mb-6">
+            Mengapa Memilih Kami?
           </span>
           
-          {/* Judul dengan warna amber */}
-          <h2 className="font-sf text-3xl md:text-4xl font-bold mb-4 text-amber-400">Keunggulan Kami</h2>
+          <h2 className="font-sf text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+            Keunggulan <span className="text-amber-500">Yamet Batam Tiban</span>
+          </h2>
           
-          {/* Deskripsi */}
-          <p className="font-sf p-2 text-sm md:text-base text-gray-500 max-w-xl mx-auto">
-            Mengapa memilih Yamet Batam Tiban untuk tumbuh kembang anak Anda?
+          <p className="font-sf text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Dipercaya ribuan keluarga sebagai partner terbaik dalam mendampingi tumbuh kembang anak
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {keunggulan.map((item, index) => {
             const colorClasses = getColorClasses(item.color);
             
             return (
-              <div key={index} className="flex items-stretch group h-full">
-                {/* Icon Box - Terpisah dari card utama, sejajar dengan tengah card */}
-                <div className={`flex-shrink-0 w-16 self-center ${colorClasses.bg} rounded-lg flex items-center justify-center text-white shadow-md h-16 group-hover:scale-110 transition-transform duration-300`}>
-                  {item.icon}
-                </div>
-                
-                {/* Content Box - Dengan height fix untuk konsistensi */}
-                <div className={`flex-grow p-5 ${colorClasses.light} border ${colorClasses.border} rounded-lg ml-4 flex flex-col justify-between group-hover:shadow-md transition-all duration-300`}>
-                  <div>
-                    <h3 className={`text-lg font-bold mb-2 ${colorClasses.text}`}>
+              <div 
+                key={index} 
+                className="group relative"
+              >
+                <div className={`${colorClasses.light} ${colorClasses.border} border-2 rounded-3xl p-8 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 relative overflow-hidden`}>
+                  {/* Background accent */}
+                  <div className={`absolute top-0 right-0 w-32 h-32 ${colorClasses.accent} opacity-10 rounded-full -mr-16 -mt-16`}></div>
+                  
+                  {/* Icon */}
+                  <div className={`inline-flex p-4 bg-gradient-to-br ${colorClasses.bg} rounded-2xl text-white mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    {item.icon}
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="space-y-4 relative z-10">
+                    <h3 className="text-2xl font-bold text-gray-800 group-hover:text-gray-900 transition-colors">
                       {item.title}
                     </h3>
                     
-                    <p className="text-sm text-gray-600 mb-3">
+                    <p className={`text-base font-semibold ${colorClasses.text} uppercase tracking-wide mb-3`}>
+                      {item.subtitle}
+                    </p>
+                    
+                    {/* Stats badge - dipindah ke bawah title */}
+                    <div className={`inline-block px-4 py-2 ${colorClasses.text} bg-white rounded-full text-sm font-bold border ${colorClasses.border} mb-4 shadow-sm`}>
+                      {item.stats}
+                    </div>
+                    
+                    <p className="text-gray-600 leading-relaxed">
                       {item.description}
                     </p>
                   </div>
-                  
-                  <div className={`${colorClasses.text} text-sm font-medium flex items-center cursor-pointer hover:underline mt-auto`}>
-                    Selengkapnya
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+
+                  {/* Hover indicator */}
+                  <div className={`absolute bottom-0 left-0 h-1 ${colorClasses.accent} w-0 group-hover:w-full transition-all duration-500 ease-out`}></div>
                 </div>
               </div>
             );
           })}
+        </div>
+
+        {/* Trust indicators */}
+        <div className="mt-16 text-center">
+          <div className="flex justify-center items-center space-x-2 mb-4">
+            {[1,2,3,4,5].map((star) => (
+              <Star key={star} className="w-6 h-6 text-amber-400 fill-current" />
+            ))}
+          </div>
+          <p className="text-gray-600 font-medium">
+            Dipercaya oleh <span className="text-amber-600 font-bold">16,000+ keluarga</span> di Batam dan sekitarnya
+          </p>
+        </div>
+
+        {/* Call to action */}
+        <div className="mt-12 text-center">
+          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+              Siap Memberikan yang Terbaik untuk Anak Anda?
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Konsultasikan kebutuhan tumbuh kembang anak Anda dengan tim ahli kami
+            </p>
+            <button className="bg-gradient-to-r from-amber-400 to-orange-400 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-amber-500 hover:to-orange-500 transition-all duration-300 transform hover:scale-105 shadow-lg">
+              Konsultasi Sekarang
+            </button>
+          </div>
         </div>
       </div>
     </section>

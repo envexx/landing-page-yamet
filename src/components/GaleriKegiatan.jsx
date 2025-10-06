@@ -1,305 +1,152 @@
-import { useState, useRef, useEffect } from 'react';
-import { MoveRight, ZoomIn, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ArrowRight, X, Camera, ChevronLeft, ChevronRight } from 'lucide-react';
+import { GALLERY_IMAGES } from '../constants/gallery';
+
+const featuredImages = GALLERY_IMAGES.filter(image => image.featured);
 
 const GaleriKegiatan = () => {
-  const [hoveredImage, setHoveredImage] = useState(null);
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [lightboxImage, setLightboxImage] = useState(null);
-  const galleryRef = useRef(null);
-  const sliderRef = useRef(null);
-  
-  // Data galeri dengan gambar placeholder - with 3 portrait and 7 landscape images
-  const galleryItems = [
-    {
-      id: 1,
-      src: "/image/galery/ash-gerlach-YF6Xa6G98H4-unsplash.webp", // Landscape
-      alt: "Terapi Sensori",
-      title: "Sensory Messy Play",
-      description: "Aktivitas terapi sensorik untuk meningkatkan perkembangan anak",
-      orientation: "landscape"
-    },
-    {
-      id: 2,
-      src: "/image/galery/bambi-corro-fn3puWB0pHY-unsplash.webp", // Portrait
-      alt: "Terapi Okupasi",
-      title: "Terapi Okupasi",
-      description: "Melatih kemampuan motorik halus dan koordinasi tangan-mata",
-      orientation: "portrait"
-    },
-    {
-      id: 3,
-      src: "/image/galery/myles-tan-WNAO036c6FM-unsplash.webp", // Landscape
-      alt: "Terapi Wicara",
-      title: "Terapi Wicara",
-      description: "Sesi terapi wicara individual dengan terapis berpengalaman",
-      orientation: "landscape"
-    },
-    {
-      id: 4,
-      src: "/image/galery/nappy-oxBV3sO9SmQ.webp", // Landscape
-      alt: "Terapi Perilaku",
-      title: "Terapi Perilaku",
-      description: "Pengembangan perilaku positif dan kemandirian anak",
-      orientation: "landscape"
-    },
-    {
-      id: 5,
-      src: "/image/galery/sigmund-OV44gxH71DU.webp", // Portrait
-      alt: "Aktivitas Kelompok",
-      title: "Aktivitas Kelompok",
-      description: "Kegiatan kelompok untuk mengembangkan keterampilan sosial",
-      orientation: "portrait"
-    },
-    {
-      id: 6,
-      src: "/image/galery/stephen-andrews-u0zTce7KNlY.webp", // Landscape
-      alt: "Terapi Seni",
-      title: "Terapi Seni",
-      description: "Mengembangkan ekspresi kreatif melalui seni",
-      orientation: "landscape"
-    },
-    {
-      id: 7,
-      src: "/image/galery/nappy-oxBV3sO9SmQ.webp", // Landscape
-      alt: "Terapi Musik",
-      title: "Terapi Musik",
-      description: "Stimulasi perkembangan melalui ritme dan melodi",
-      orientation: "landscape"
-    },
-    {
-      id: 8,
-      src: "/image/galery/stephen-andrews-u0zTce7KNlY.webp", // Portrait
-      alt: "Terapi Bermain",
-      title: "Terapi Bermain",
-      description: "Meningkatkan keterampilan sosial melalui aktivitas bermain",
-      orientation: "portrait"
-    },
-    {
-      id: 9,
-      src: "/image/galery/sigmund-OV44gxH71DU.webp", // Landscape
-      alt: "Stimulasi Motorik",
-      title: "Stimulasi Motorik",
-      description: "Latihan pengembangan motorik kasar dan halus",
-      orientation: "landscape"
-    },
-    {
-      id: 10,
-      src: "/image/galery/ash-gerlach-YF6Xa6G98H4-unsplash.webp", // Landscape
-      alt: "Terapi Integrasi Sensori",
-      title: "Integrasi Sensori",
-      description: "Kegiatan integrasi sensori untuk keseimbangan sistem sensorik",
-      orientation: "landscape"
-    },
-  ];
-  
-  // Buka lightbox ketika gambar diklik
-  const openLightbox = (image) => {
-    setLightboxImage(image);
-    setLightboxOpen(true);
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const openLightbox = (index) => {
+    setActiveIndex(index);
     document.body.style.overflow = 'hidden';
   };
-  
-  // Tutup lightbox
+
   const closeLightbox = () => {
-    setLightboxOpen(false);
+    setActiveIndex(null);
     document.body.style.overflow = 'auto';
   };
-  
-  // Slider navigation for mobile
-  const scrollLeft = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: -280, behavior: 'smooth' });
-    }
+
+  const showPrev = (event) => {
+    event.stopPropagation();
+    setActiveIndex((prev) => (prev - 1 + featuredImages.length) % featuredImages.length);
   };
 
-  const scrollRight = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: 280, behavior: 'smooth' });
-    }
+  const showNext = (event) => {
+    event.stopPropagation();
+    setActiveIndex((prev) => (prev + 1) % featuredImages.length);
   };
-  
-  // Efek scroll animasi
+
+  const goToGallery = () => {
+    window.location.href = '/galeri';
+  };
+
   useEffect(() => {
-    const handleScroll = () => {
-      if (galleryRef.current) {
-        const elements = galleryRef.current.querySelectorAll('.gallery-item');
-        elements.forEach((el) => {
-          const rect = el.getBoundingClientRect();
-          const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-          
-          if (isVisible) {
-            el.classList.add('appear');
-          }
-        });
-      }
+    if (activeIndex === null) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') closeLightbox();
+      if (event.key === 'ArrowLeft') showPrev(event);
+      if (event.key === 'ArrowRight') showNext(event);
     };
-    
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
-    
+
+    window.addEventListener('keydown', handleKeyDown);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'auto';
     };
+  }, [activeIndex]);
+
+  useEffect(() => () => {
+    document.body.style.overflow = 'auto';
   }, []);
-  
+
   return (
-    <section className="py-16 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-4 max-w-6xl relative z-10">
-        <div className="text-center mb-12">
-          {/* Label kecil dengan border tipis */}
-          <span className="font-sf inline-block px-4 py-1 text-xs tracking-wider font-medium text-gray-600 border border-gray-200 rounded-full mb-4 bg-white">
-            Beragam Aktivitas
+    <section className="py-20 bg-gradient-to-br from-amber-50 via-white to-orange-50 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-72 h-72 bg-amber-200 rounded-full opacity-10 -ml-36 -mt-36" aria-hidden="true" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-200 rounded-full opacity-10 -mr-48 -mb-48" aria-hidden="true" />
+
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <span className="font-sf inline-block px-6 py-2 text-sm tracking-wider font-medium text-amber-700 bg-amber-100 rounded-full mb-6">
+            Dokumentasi Kegiatan
           </span>
-          
-          {/* Judul dengan warna yellow */}
-          <h2 className="font-sf text-3xl md:text-4xl font-bold mb-4 text-yellow-400">Galeri Kegiatan Terapi</h2>
-          
-          {/* Deskripsi */}
-          <p className="font-sf p-2 text-sm md:text-base text-gray-500 max-w-xl mx-auto">
-            Dokumentasi Terapi dan Aktivitas Anak di Yamet Batam Batu Aji
+
+          <h2 className="font-sf text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+            Galeri <span className="text-amber-500">Klinik Yamet</span>
+          </h2>
+
+          <p className="font-sf text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Kumpulan dokumentasi kegiatan dan sesi terapi terbaru di Klinik Yamet Batam Tiban.
           </p>
         </div>
-        
-        {/* Mobile Slider Gallery (hidden on larger screens) */}
-        <div className="md:hidden relative">
-          {/* Slider Navigation Buttons */}
-          <button 
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full shadow-md"
-            onClick={scrollLeft}
-          >
-            <ChevronLeft size={20} className="text-gray-700" />
-          </button>
-          
-          <button
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full shadow-md"
-            onClick={scrollRight}
-          >
-            <ChevronRight size={20} className="text-gray-700" />
-          </button>
-          
-          {/* Slider Container */}
-          <div 
-            ref={sliderRef}
-            className="flex overflow-x-auto scrollbar-hide gap-4 pb-6 snap-x snap-mandatory"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-            {galleryItems.map((image) => (
-              <div 
-                key={image.id}
-                className="flex-shrink-0 w-64 snap-start"
-                onClick={() => openLightbox(image)}
-              >
-                <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
-                  {/* Fixed image container with aspect ratio */}
-                  <div className="relative h-48 overflow-hidden">
-                    <picture>
-                      <source srcSet={image.src} type="image/webp" />
-                      <img src={image.src.replace('.webp', '.jpg')} alt={image.alt} className="w-full h-full object-cover" />
-                    </picture>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-3">
-                      <h3 className="text-white text-base font-medium line-clamp-1">{image.title}</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        
-        {/* Desktop Grid Gallery (hidden on mobile) */}
-        <div 
-          ref={galleryRef} 
-          className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-5"
-        >
-          {galleryItems.map((image, index) => (
-            <div 
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          {featuredImages.map((image, index) => (
+            <button
               key={image.id}
-              className="gallery-item opacity-0 transform translate-y-8 transition-all duration-700 ease-out"
-              onMouseEnter={() => setHoveredImage(image.id)}
-              onMouseLeave={() => setHoveredImage(null)}
+              type="button"
+              onClick={() => openLightbox(index)}
+              className="group relative block overflow-hidden rounded-3xl bg-white shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
             >
-              <div 
-                className="h-full bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
-                onClick={() => openLightbox(image)}
-              >
-                {/* Fixed height container for all images */}
-                <div className="relative h-64 overflow-hidden">
-                  <picture>
-                    <source srcSet={image.src} type="image/webp" />
-                    <img src={image.src.replace('.webp', '.jpg')} alt={image.alt} className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-105" />
-                  </picture>
-                  
-                  {/* Simple hover overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4 transition-opacity duration-300 ${
-                    hoveredImage === image.id ? 'opacity-100' : 'opacity-0'
-                  }`}>
-                    <div className="transform transition-transform duration-300">
-                      <h3 className="text-white font-sf text-lg font-medium">{image.title}</h3>
-                      <button className="mt-2 bg-white/20 backdrop-blur-sm p-2 rounded-full">
-                        <ZoomIn size={16} className="text-white" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </button>
           ))}
         </div>
-        
-        {/* Simple action button */}
-        <div className="mt-10 text-center">
-          <button className="font-sf inline-flex items-center px-5 py-2 bg-yellow-300 text-white rounded-lg font-medium hover:bg-yellow-400 transition-colors shadow-sm">
-            <span>Lihat Semua Kegiatan</span>
-            <MoveRight size={16} className="ml-2" />
-          </button>
-        </div>
-      </div>
-      
-      {/* Lightbox Modal */}
-      {lightboxOpen && lightboxImage && (
-        <div 
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4" 
-          onClick={closeLightbox}
-        >
-          <div 
-            className="relative max-w-3xl w-full max-h-[90vh]" 
-            onClick={e => e.stopPropagation()}
+
+        <div className="mt-14 flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button
+            onClick={goToGallery}
+            className="group bg-gradient-to-r from-amber-400 to-orange-400 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-amber-500 hover:to-orange-500 transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center space-x-3"
           >
-            <button 
-              className="absolute -top-10 right-0 text-white hover:text-yellow-300"
-              onClick={closeLightbox}
-            >
-              <X size={24} />
-            </button>
-            
-            <div className="bg-white rounded-lg overflow-hidden shadow-xl">
-              <div className="relative">
-                <picture>
-                  <source srcSet={lightboxImage.src} type="image/webp" />
-                  <img src={lightboxImage.src.replace('.webp', '.jpg')} alt={lightboxImage.alt} className="w-full object-contain max-h-[70vh]" />
-                </picture>
-              </div>
-              
-              <div className="p-5">
-                <h3 className="font-sf text-xl font-bold text-gray-800">{lightboxImage.title}</h3>
-                <p className="font-sf text-gray-600 mt-2">{lightboxImage.description}</p>
-              </div>
-            </div>
+            <Camera size={20} />
+            <span>Lihat Semua Galeri</span>
+            <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+          </button>
+
+          <div className="text-gray-500 text-sm flex items-center space-x-2">
+            <span>Dokumentasi terbaru Yamet</span>
+            <span className="bg-amber-100 text-amber-700 px-3 py-1 rounded-full font-semibold">{featuredImages.length} foto</span>
           </div>
         </div>
-      )}
+      </div>
 
-      {/* Hide scrollbar styles */}
-      <style jsx>{`
-        .gallery-item.appear {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
+      {activeIndex !== null && (
+        <div
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+          onClick={closeLightbox}
+        >
+          <button
+            type="button"
+            className="absolute top-6 right-6 text-white hover:text-amber-400 transition"
+            onClick={closeLightbox}
+            aria-label="Tutup galeri"
+          >
+            <X size={32} />
+          </button>
+
+          <button
+            type="button"
+            className="absolute left-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition"
+            onClick={showPrev}
+            aria-label="Foto sebelumnya"
+          >
+            <ChevronLeft size={36} />
+          </button>
+
+          <div className="relative max-w-4xl w-full">
+            <img
+              src={featuredImages[activeIndex].src}
+              alt={featuredImages[activeIndex].alt}
+              className="w-full max-h-[80vh] object-contain rounded-3xl bg-white"
+            />
+          </div>
+
+          <button
+            type="button"
+            className="absolute right-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition"
+            onClick={showNext}
+            aria-label="Foto selanjutnya"
+          >
+            <ChevronRight size={36} />
+          </button>
+        </div>
+      )}
     </section>
   );
 };

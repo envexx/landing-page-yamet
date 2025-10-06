@@ -1,5 +1,6 @@
 import React from "react";
-import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa';
+import { WHATSAPP_LINK, INSTAGRAM_LINK, TIKTOK_LINK } from '../constants/links';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -23,34 +24,39 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a
                 href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-yellow-400 hover:text-yellow-600 transition-colors duration-300"
                 aria-label="Facebook"
               >
                 <FaFacebookF size={20} />
               </a>
-
               <a
-                href="https://instagram.com"
+                href={INSTAGRAM_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-yellow-400 hover:text-yellow-600 transition-colors duration-300"
                 aria-label="Instagram"
               >
                 <FaInstagram size={20} />
               </a>
-
               <a
-                href="https://tiktok.com"
+                href={TIKTOK_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-yellow-400 hover:text-yellow-600 transition-colors duration-300"
                 aria-label="TikTok"
               >
                 <FaTiktok size={20} />
               </a>
-
               <a
-                href="https://youtube.com"
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-yellow-400 hover:text-yellow-600 transition-colors duration-300"
-                aria-label="YouTube"
+                aria-label="WhatsApp"
               >
-                <FaYoutube size={20} />
+                <FaWhatsapp size={20} />
               </a>
             </div>
           </div>
@@ -117,7 +123,12 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/konsultasi" className="text-gray-600 hover:text-yellow-500 text-sm transition-colors duration-300">
+                <a
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-yellow-500 text-sm transition-colors duration-300"
+                >
                   Hubungi Kami
                 </a>
               </li>
