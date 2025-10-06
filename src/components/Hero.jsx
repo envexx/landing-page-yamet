@@ -194,6 +194,7 @@ const Hero = () => {
               className="absolute bottom-[-40px] left-[-20px] hidden w-40 rotate-[12deg] md:block lg:w-48"
             />
           </picture>
+          
 
           <div className="absolute -bottom-10 right-5 hidden w-full max-w-xs rounded-3xl bg-white/90 p-5 shadow-xl shadow-amber-200/60 backdrop-blur md:block">
             <p className="font-sf text-xs font-semibold uppercase tracking-wider text-amber-500">Program Terintegrasi</p>

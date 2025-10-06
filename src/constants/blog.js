@@ -1,160 +1,160 @@
 export const BLOG_POSTS = [
   {
-    id: "dampingi-anak-bicara",
-    title: "5 Cara Mendampingi Anak yang Baru Mulai Bicara",
+    id: "awal-bicara",
+    title: "Lima Langkah Mendukung Anak yang Baru Belajar Bicara",
     category: "Terapi Wicara",
     date: "2024-03-01",
     readTime: "4 menit",
     heroImage: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=800&fit=crop",
-    summary: "Langkah-langkah sederhana agar anak nyaman mengucapkan kata pertama dan berani berkomunikasi.",
+    summary: "Tips praktis agar orang tua bisa merangsang kemampuan bicara anak di rumah setiap hari.",
     keyPoints: [
-      "Gunakan kalimat pendek dan jelas",
-      "Respon setiap celoteh anak dengan antusias",
-      "Sediakan waktu khusus untuk membaca bersama"
+      "Gunakan kalimat yang pendek dan jelas",
+      "Respons setiap usaha bicara dengan antusias",
+      "Sediakan waktu rutin untuk membaca cerita"
     ],
     sections: [
       {
-        heading: "Mengapa Dukungan Orang Tua Sangat Penting",
+        heading: "Mengapa Peran Orang Tua Sangat Penting",
         paragraphs: [
-          "Anak belajar bicara dengan meniru. Ketika orang tua menyediakan contoh yang jelas dan penuh perhatian, anak merasa aman untuk mencoba bunyi baru.",
-          "Cobalah berada sejajar dengan anak agar kontak mata lebih mudah dan ekspresi wajah terlihat jelas."
+          "Anak belajar bicara dengan meniru cara orang tua berbicara. Saat orang tua memberi contoh yang jelas, anak merasa aman untuk mencoba bunyi baru.",
+          "Cobalah berbicara sejajar dengan anak sehingga kontak mata mudah dilakukan dan ekspresi wajah terlihat dengan jelas."
         ]
       },
       {
-        heading: "Rutinitas Pendukung Setiap Hari",
+        heading: "Rutinitas Sederhana Setiap Hari",
         paragraphs: [
-          "Sisipkan momen bercerita 10-15 menit, gunakan buku dengan gambar besar, lalu ajukan pertanyaan sederhana seperti ‘Ini warna apa?’.",
-          "Saat anak mencoba bicara, ulangi kata yang benar dengan nada ramah. Hindari memotong pembicaraan meski kata yang keluar belum jelas."
+          "Luangkan waktu 10 sampai 15 menit untuk membaca buku gambar. Tanyakan pertanyaan sederhana seperti 'Ini warna apa?' atau 'Siapa yang ada di gambar?'.",
+          "Ketika anak menjawab dengan kata yang belum jelas, ulangi kata tersebut dengan pelafalan yang benar tanpa menyudutkan anak."
         ]
       },
       {
-        heading: "Kapan Perlu Konsultasi?",
+        heading: "Kapan Perlu Konsultasi Profesional",
         paragraphs: [
-          "Jika anak belum mengucapkan kata bermakna pada usia 18 bulan atau sulit memahami perintah sederhana, konsultasi profesional dapat membantu menemukan strategi yang tepat." 
+          "Jika anak belum mengucapkan kata bermakna pada usia 18 bulan atau belum bisa merangkai dua kata saat usia dua tahun, konsultasi dengan terapis wicara membantu menentukan strategi yang tepat."
         ]
       }
     ],
-    ctaText: "Diskusikan kebutuhan terapi wicara anak Anda bersama tim Yamet Batam Tiban."
+    ctaText: "Diskusikan rencana terapi wicara anak Anda bersama tim Yamet Batam Tiban."
   },
   {
-    id: "stimulasi-rumah-mudah",
-    title: "Rutinitas Sederhana untuk Menstimulasi Anak di Rumah",
+    id: "stimulasi-rumah",
+    title: "Ide Stimulasi Mudah di Rumah untuk Anak Usia Dini",
     category: "Stimulasi Harian",
     date: "2024-02-20",
     readTime: "5 menit",
     heroImage: "https://images.unsplash.com/photo-1549923758-3988a8d28c4b?w=1200&h=800&fit=crop",
-    summary: "Panduan singkat menata aktivitas harian supaya anak aktif bergerak, berpikir, dan bersosialisasi.",
+    summary: "Panduan singkat menata aktivitas harian agar anak aktif bergerak, berpikir, dan berinteraksi.",
     keyPoints: [
-      "Gunakan barang rumah tangga sebagai alat bermain",
-      "Buat jadwal harian yang mudah diikuti",
-      "Libatkan anak saat pekerjaan rumah sederhana"
+      "Manfaatkan benda di rumah sebagai alat bermain",
+      "Susun jadwal harian yang fleksibel",
+      "Libatkan anak saat kegiatan rumah tangga"
     ],
     sections: [
       {
-        heading: "Pagi yang Penuh Gerak",
+        heading: "Pagi Penuh Gerak",
         paragraphs: [
-          "Awali hari dengan senam ringan sambil menyebut nama anggota tubuh. Aktivitas ini membantu koordinasi motorik kasar dan memperkaya kosakata.",
-          "Ajak anak memilih baju sendiri untuk melatih kemandirian dan keterampilan motorik halus."
+          "Mulai hari dengan senam ringan sambil menyebut nama anggota tubuh. Aktivitas ini mendukung koordinasi motorik kasar dan menambah kosakata.",
+          "Ajak anak memilih pakaian sendiri untuk melatih motorik halus dan kemandirian."
         ]
       },
       {
-        heading: "Belajar Lewat Permainan",
+        heading: "Belajar Lewat Bermain",
         paragraphs: [
-          "Saat memasak, minta anak menyebutkan warna sayur atau menghitung sendok. Ini melatih kemampuan kognitif tanpa membuat anak merasa sedang belajar.",
-          "Permainan papan sederhana atau puzzle membantu fokus dan kemampuan memecahkan masalah."
+          "Saat memasak, minta anak menyebutkan warna sayur atau menghitung sendok. Cara ini melatih kemampuan kognitif tanpa membuat anak merasa diuji.",
+          "Permainan puzzle atau balok bantu anak mengembangkan fokus dan kemampuan memecahkan masalah."
         ]
       },
       {
-        heading: "Refleksi Sore Bersama",
+        heading: "Ritual Malam Menenangkan",
         paragraphs: [
-          "Sebelum tidur, ajak anak bercerita tentang kegiatan hari ini. Tanyakan momen apa yang paling disukai dan apa yang ingin dicoba besok."
+          "Sebelum tidur, ajak anak bercerita tentang kegiatan hari ini. Tanyakan momen favoritnya dan rencanakan aktivitas yang ingin dicoba esok hari."
         ]
       }
     ],
-    ctaText: "Butuh ide stimulasi lanjutan? Terapi Yamet siap menyusun program rumah yang personal."
+    ctaText: "Butuh panduan stimulasi yang lebih terstruktur? Terapis Yamet siap menyusun program rumah untuk keluarga Anda."
   },
   {
-    id: "tanda-butuh-asesmen",
-    title: "7 Tanda Anak Perlu Asesmen Perkembangan",
+    id: "tanda-asesmen",
+    title: "Tujuh Tanda Anak Membutuhkan Asesmen Perkembangan",
     category: "Asesmen Perkembangan",
     date: "2024-02-10",
     readTime: "6 menit",
     heroImage: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1200&h=800&fit=crop",
-    summary: "Kenali gejala yang sering terlewat agar orang tua bisa mengambil langkah tepat sejak dini.",
+    summary: "Kenali indikasi yang sering terlewat agar orang tua bisa mengambil langkah tepat sedini mungkin.",
     keyPoints: [
-      "Daya tanggap anak belum sesuai usia",
-      "Keterlambatan bicara atau motorik",
-      "Perilaku yang sangat berulang"
+      "Respons anak tidak sesuai usia",
+      "Terjadi keterlambatan bicara atau motorik",
+      "Perilaku berulang sulit dialihkan"
     ],
     sections: [
       {
-        heading: "Perhatikan Perkembangan Bahasa",
+        heading: "Bahasa dan Komunikasi",
         paragraphs: [
-          "Jika anak jarang menatap saat dipanggil atau tidak merespon suara keras, ini bisa jadi sinyal perlu evaluasi lebih lanjut.",
-          "Gunakan catatan perkembangan untuk membandingkan capaian anak dengan rentang usia yang diharapkan."
+          "Jika anak jarang menoleh saat dipanggil atau tidak merespons suara keras, segera catat dan pantau perkembangannya.",
+          "Gunakan catatan harian untuk melihat apakah kemampuan baru muncul sesuai rentang usia yang diharapkan."
         ]
       },
       {
         heading: "Motorik dan Sensori",
         paragraphs: [
-          "Kesulitan memegang sendok, jatuh berulang saat berjalan, atau menolak disentuh bisa jadi indikator adanya tantangan sensori.",
-          "Anak yang sangat mencari atau menghindari rangsangan tertentu (misalnya suara vacuum atau sentuhan pasir) juga perlu diperiksa."
+          "Kesulitan menggunakan sendok, cepat terjatuh, atau menolak sentuhan tertentu bisa menjadi tanda adanya tantangan sensori.",
+          "Anak yang sangat mencari atau menghindari rangsangan tertentu juga sebaiknya diperiksa oleh tim profesional."
         ]
       },
       {
-        heading: "Kapan Harus Bertindak",
+        heading: "Saatnya Berkonsultasi",
         paragraphs: [
-          "Segera jadwalkan asesmen bila kekhawatiran berlangsung lebih dari tiga bulan. Intervensi dini membantu anak mengejar ketertinggalan dengan lebih cepat."
+          "Jika kekhawatiran bertahan lebih dari tiga bulan, jadwalkan asesmen agar intervensi dapat dilakukan lebih cepat dan efektif."
         ]
       }
     ],
-    ctaText: "Hubungi Yamet Batam Tiban untuk mendapatkan asesmen menyeluruh dari tim multidisiplin kami."
+    ctaText: "Hubungi Yamet Batam Tiban untuk asesmen menyeluruh bersama tim multidisiplin kami."
   },
   {
-    id: "kolaborasi-dengan-guru",
-    title: "Cara Kolaborasi dengan Guru untuk Mendukung Terapi Anak",
+    id: "kerja-sama-guru",
+    title: "Membangun Kerja Sama dengan Guru untuk Mendukung Terapi",
     category: "Kolaborasi Orang Tua",
     date: "2024-01-28",
     readTime: "5 menit",
     heroImage: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop",
-    summary: "Langkah praktis agar strategi terapi di rumah dan di sekolah saling melengkapi.",
+    summary: "Langkah praktis agar strategi terapi di rumah dan di sekolah saling menguatkan.",
     keyPoints: [
-      "Bagikan laporan terapi secara rutin",
+      "Bagikan catatan terapi secara rutin",
       "Tetapkan tujuan yang sama dengan guru",
-      "Evaluasi hasil setiap bulan"
+      "Evaluasi hasil secara berkala"
     ],
     sections: [
       {
-        heading: "Mulai dari Komunikasi Terbuka",
+        heading: "Mulai dengan Komunikasi Terbuka",
         paragraphs: [
-          "Sampaikan kepada guru tentang program terapi anak termasuk target jangka pendek yang sedang dikerjakan.",
-          "Minta guru menyampaikan pengamatan harian sehingga tim terapi bisa menyesuaikan metode."
+          "Sampaikan kepada guru mengenai target terapi anak dan minta laporan singkat tentang perkembangan di kelas.",
+          "Mintalah masukan guru sehingga terapis dapat menyesuaikan pendekatan yang dipakai."
         ]
       },
       {
-        heading: "Satukan Strategi",
+        heading: "Samakan Strategi",
         paragraphs: [
-          "Jika anak sedang belajar mengucapkan permintaan, minta guru menggunakan kalimat isyarat yang sama seperti di rumah.",
-          "Gunakan buku komunikasi atau pengingat visual yang konsisten di dua lingkungan."
+          "Jika anak belajar meminta bantuan dengan kalimat tertentu, minta guru menggunakan kalimat yang sama agar anak tidak bingung.",
+          "Gunakan alat bantu visual yang serupa di rumah dan sekolah sehingga anak merasa konsisten."
         ]
       },
       {
-        heading: "Evaluasi Berkala",
+        heading: "Pertemuan Evaluasi Rutin",
         paragraphs: [
-          "Atur pertemuan singkat setiap bulan antara orang tua, guru, dan terapis untuk mengevaluasi kemajuan serta tantangan baru."
+          "Atur pertemuan singkat setiap bulan antara orang tua, guru, dan terapis untuk meninjau kemajuan serta menyusun langkah berikutnya."
         ]
       }
     ],
-    ctaText: "Ingin bimbingan lebih lanjut? Tim Yamet siap mendampingi koordinasi antara rumah dan sekolah."
+    ctaText: "Perlu bantuan menyusun rencana kolaborasi? Tim Yamet siap mendampingi koordinasi dengan sekolah."
   },
   {
-    id: "strategi-menenangkan-tantrum",
+    id: "atasi-tantrum",
     title: "Strategi Menenangkan Anak Saat Tantrum",
     category: "Manajemen Perilaku",
     date: "2024-01-15",
     readTime: "4 menit",
     heroImage: "https://images.unsplash.com/photo-1516627145497-ae4048c32ead?w=1200&h=800&fit=crop",
-    summary: "Panduan singkat menghadapi tantrum dengan tenang agar anak belajar mengelola emosi.",
+    summary: "Panduan singkat menghadapi tantrum agar anak belajar mengelola emosi dengan dukungan orang tua.",
     keyPoints: [
       "Tetap tenang dan validasi perasaan anak",
       "Alihkan perhatian setelah emosi mereda",
@@ -162,27 +162,27 @@ export const BLOG_POSTS = [
     ],
     sections: [
       {
-        heading: "Langkah Pertama Saat Tantrum Mulai",
+        heading: "Ketika Tantrum Baru Dimulai",
         paragraphs: [
-          "Tarik napas dalam, lalu duduk atau berlutut sejajar dengan anak. Ucapkan kalimat singkat seperti ‘Mama tahu kamu kesal karena mainannya diambil’.",
-          "Pastikan lingkungan aman dengan memindahkan benda yang berbahaya, namun tetap dekat supaya anak merasa didampingi."
+          "Tarik napas dalam dan posisikan diri sejajar dengan anak. Ucapkan kalimat singkat seperti 'Mama tahu kamu kesal karena mainannya diambil'.",
+          "Pastikan lingkungan aman dengan memindahkan benda yang berbahaya tetapi tetap berada dekat agar anak merasa didampingi."
         ]
       },
       {
-        heading: "Setelah Anak Lebih Tenang",
+        heading: "Setelah Emosi Lebih Tenang",
         paragraphs: [
-          "Berikan pilihan terbatas, misalnya ‘Kamu mau minum dulu atau pakai bantal peluk?’. Pilihan membantu anak merasa punya kendali.",
-          "Puji perilaku positif yang muncul sesaat setelah tantrum mereda, contohnya ‘Terima kasih sudah menarik napas bersama Mama’."
+          "Berikan pilihan terbatas, misalnya 'Kamu mau minum dulu atau memeluk bantal?'. Pilihan membuat anak merasa memiliki kendali.",
+          "Puji perilaku positif yang muncul setelah tantrum mereda, seperti 'Terima kasih sudah menarik napas bersama Mama'."
         ]
       },
       {
-        heading: "Bangun Kebiasaan Pencegahan",
+        heading: "Cegah Tantrum Berikutnya",
         paragraphs: [
-          "Catat pemicu yang sering menyebabkan tantrum, kemudian rancang jadwal atau transisi yang lebih lembut.",
-          "Gunakan kartu gambar atau timer untuk memberi tahu anak sebelum berpindah aktivitas."
+          "Catat pemicu yang sering muncul dan siapkan transisi yang lebih lembut sebelum kegiatan baru dimulai.",
+          "Gunakan timer atau kartu gambar untuk memberi tahu anak sebelum berpindah aktivitas."
         ]
       }
     ],
-    ctaText: "Konsultasikan rencana manajemen perilaku anak Anda dengan terapis Yamet Batam Tiban."
+    ctaText: "Konsultasikan rencana manajemen emosi anak Anda dengan terapis Yamet Batam Tiban."
   }
 ];
