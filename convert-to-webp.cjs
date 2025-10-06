@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 
@@ -8,13 +8,14 @@ function convertImage(filePath) {
   const ext = path.extname(filePath).toLowerCase();
   if (ext !== '.png' && ext !== '.jpg' && ext !== '.jpeg') return;
 
-  const webpPath = filePath.replace(ext, '.webp');
+  const webpPath = filePath.slice(0, -ext.length) + '.webp';
   if (fs.existsSync(webpPath)) {
     console.log(`WebP already exists: ${webpPath}`);
     return;
   }
 
   sharp(filePath)
+    .rotate() // respect original EXIF orientation so portrait stays portrait
     .webp({ quality: 85 })
     .toFile(webpPath)
     .then(() => console.log(`Converted: ${filePath} -> ${webpPath}`))
@@ -32,4 +33,4 @@ function walkDir(dir) {
   });
 }
 
-walkDir(rootDir); 
+walkDir(rootDir);

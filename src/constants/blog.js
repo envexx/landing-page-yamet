@@ -1,11 +1,11 @@
-export const BLOG_POSTS = [
+﻿export const BLOG_POSTS = [
   {
     id: "awal-bicara",
     title: "Lima Langkah Mendukung Anak yang Baru Belajar Bicara",
     category: "Terapi Wicara",
     date: "2024-03-01",
     readTime: "4 menit",
-    heroImage: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=800&fit=crop",
+    heroImage: "/image/galery/aktifitas/ciytpbpqypap2uowu1gi.webp",
     summary: "Tips praktis agar orang tua bisa merangsang kemampuan bicara anak di rumah setiap hari.",
     keyPoints: [
       "Gunakan kalimat yang pendek dan jelas",
@@ -42,7 +42,7 @@ export const BLOG_POSTS = [
     category: "Stimulasi Harian",
     date: "2024-02-20",
     readTime: "5 menit",
-    heroImage: "https://images.unsplash.com/photo-1549923758-3988a8d28c4b?w=1200&h=800&fit=crop",
+    heroImage: "/image/galery/aktifitas/eivz7ly59xmbhmwehndw.webp",
     summary: "Panduan singkat menata aktivitas harian agar anak aktif bergerak, berpikir, dan berinteraksi.",
     keyPoints: [
       "Manfaatkan benda di rumah sebagai alat bermain",
@@ -79,7 +79,7 @@ export const BLOG_POSTS = [
     category: "Asesmen Perkembangan",
     date: "2024-02-10",
     readTime: "6 menit",
-    heroImage: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1200&h=800&fit=crop",
+    heroImage: "/image/galery/aktifitas/gglmysp8karojptl9h1t.webp",
     summary: "Kenali indikasi yang sering terlewat agar orang tua bisa mengambil langkah tepat sedini mungkin.",
     keyPoints: [
       "Respons anak tidak sesuai usia",
@@ -116,7 +116,7 @@ export const BLOG_POSTS = [
     category: "Kolaborasi Orang Tua",
     date: "2024-01-28",
     readTime: "5 menit",
-    heroImage: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop",
+    heroImage: "/image/galery/aktifitas/kyranex7wzyv64ylc4br.webp",
     summary: "Langkah praktis agar strategi terapi di rumah dan di sekolah saling menguatkan.",
     keyPoints: [
       "Bagikan catatan terapi secara rutin",
@@ -153,7 +153,7 @@ export const BLOG_POSTS = [
     category: "Manajemen Perilaku",
     date: "2024-01-15",
     readTime: "4 menit",
-    heroImage: "https://images.unsplash.com/photo-1516627145497-ae4048c32ead?w=1200&h=800&fit=crop",
+    heroImage: "/image/galery/aktifitas/mm5jke0khtiyano04u4n.webp",
     summary: "Panduan singkat menghadapi tantrum agar anak belajar mengelola emosi dengan dukungan orang tua.",
     keyPoints: [
       "Tetap tenang dan validasi perasaan anak",

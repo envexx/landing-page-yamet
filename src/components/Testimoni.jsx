@@ -21,7 +21,7 @@ const Testimonials = () => {
       role: "Ayah dari Bella (4 tahun)",
       image: "/image/testimoni/foto-testi-4.webp",
       rating: 5,
-      quote: "Terapis di Yamet Batam Batu Aji sangat profesional dan sabar menangani anak saya yang hiperaktif. Sekarang perilakunya sudah jauh lebih baik dan bisa fokus lebih lama."
+      quote: "Terapis di Yamet Batam Tiban sangat profesional dan sabar menangani anak saya yang hiperaktif. Sekarang perilakunya sudah jauh lebih baik dan bisa fokus lebih lama."
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ const Testimonials = () => {
       role: "Orang tua dari Zahra (7 tahun)",
       image: "/image/testimoni/foto-testi-2.webp",
       rating: 5,
-      quote: "Fasilitas bersih, terapis ramah, dan yang paling penting anak kami mengalami kemajuan pesat dalam belajar membaca dan menulis. Terima kasih Yamet Batam Batu Aji!"
+      quote: "Fasilitas bersih, terapis ramah, dan yang paling penting anak kami mengalami kemajuan pesat dalam belajar membaca dan menulis. Terima kasih Yamet Batam Tiban!"
     },
     {
       id: 5,
@@ -121,7 +121,7 @@ const Testimonials = () => {
           
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Dengarkan pengalaman dan perubahan positif dari orang tua yang anak-anaknya telah mendapatkan
-            layanan di <span className="font-semibold text-yellow-600">Yamet Batam Batu Aji</span>
+            layanan di <span className="font-semibold text-yellow-600">Yamet Batam Tiban</span>
           </p>
         </div>
 
