@@ -101,6 +101,12 @@ const BlogDetailPage = () => {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => {
+              if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
+                e.preventDefault();
+                window.gtag_report_conversion(WHATSAPP_LINK);
+              }
+            }}
             className="mt-5 inline-flex items-center gap-3 rounded-full bg-amber-500 px-7 py-3 font-semibold text-white transition-transform duration-300 hover:-translate-y-1 hover:bg-amber-600"
           >
             Konsultasi WhatsApp

@@ -53,6 +53,12 @@ const Footer = () => {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => {
+                  if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
+                    e.preventDefault();
+                    window.gtag_report_conversion(WHATSAPP_LINK);
+                  }
+                }}
                 className="text-yellow-400 hover:text-yellow-600 transition-colors duration-300"
                 aria-label="WhatsApp"
               >
@@ -127,6 +133,12 @@ const Footer = () => {
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(e) => {
+                    if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
+                      e.preventDefault();
+                      window.gtag_report_conversion(WHATSAPP_LINK);
+                    }
+                  }}
                   className="text-gray-600 hover:text-yellow-500 text-sm transition-colors duration-300"
                 >
                   Hubungi Kami

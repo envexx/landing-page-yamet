@@ -93,7 +93,17 @@ const Header = () => {
 
           {/* Konsultasi Button - Desktop */}
           <div className="hidden md:block flex-shrink-0">
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+            <a 
+              href={WHATSAPP_LINK} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
+                  e.preventDefault();
+                  window.gtag_report_conversion(WHATSAPP_LINK);
+                }
+              }}
+            >
               <button className="bg-yellow-400 font-sf text-md font-medium hover:bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md">
                 Konsultasi Sekarang
               </button>
@@ -118,6 +128,12 @@ const Header = () => {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => {
+                if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
+                  e.preventDefault();
+                  window.gtag_report_conversion(WHATSAPP_LINK);
+                }
+              }}
               className="block w-full bg-yellow-400 hover:bg-yellow-500 text-white font-sf font-semibold py-2 px-4 rounded-lg mt-4 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md text-center"
             >
               Konsultasi Sekarang

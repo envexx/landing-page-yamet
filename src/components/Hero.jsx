@@ -79,6 +79,12 @@ const Hero = () => {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => {
+                if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
+                  e.preventDefault();
+                  window.gtag_report_conversion(WHATSAPP_LINK);
+                }
+              }}
               className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-orange-400 px-7 py-4 font-sf text-base font-semibold text-white shadow-lg shadow-amber-300/40 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
               <span>Jadwalkan Konsultasi</span>

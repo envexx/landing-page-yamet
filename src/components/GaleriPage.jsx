@@ -132,6 +132,12 @@ const GaleriPage = () => {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => {
+              if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
+                e.preventDefault();
+                window.gtag_report_conversion(WHATSAPP_LINK);
+              }
+            }}
             className="inline-flex items-center gap-3 rounded-full bg-white px-8 py-3 font-semibold text-amber-600 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
           >
             Konsultasi via WhatsApp

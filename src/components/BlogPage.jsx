@@ -72,6 +72,12 @@ const BlogPage = () => {
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(e) => {
+                    if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
+                      e.preventDefault();
+                      window.gtag_report_conversion(WHATSAPP_LINK);
+                    }
+                  }}
                   className="inline-flex items-center gap-2 rounded-full bg-amber-500 px-5 py-2 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber-600"
                 >
                   Konsultasi dengan Yamet
@@ -94,6 +100,12 @@ const BlogPage = () => {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => {
+              if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
+                e.preventDefault();
+                window.gtag_report_conversion(WHATSAPP_LINK);
+              }
+            }}
             className="mt-6 inline-flex items-center gap-3 rounded-full bg-amber-500 px-8 py-3 text-base font-semibold text-white transition-transform duration-300 hover:-translate-y-1 hover:bg-amber-600"
           >
             Konsultasi WhatsApp Gratis

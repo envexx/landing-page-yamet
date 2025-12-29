@@ -145,6 +145,12 @@ const FAQSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a 
                 href="tel:082190008929"
+                onClick={(e) => {
+                  if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
+                    e.preventDefault();
+                    window.gtag_report_conversion('tel:082190008929');
+                  }
+                }}
                 className="inline-flex items-center gap-3 bg-white text-amber-700 hover:bg-amber-50 px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 group"
               >
                 <Phone className="w-5 h-5 text-amber-600 group-hover:rotate-12 transition-transform" />
@@ -156,6 +162,12 @@ const FAQSection = () => {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => {
+                  if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
+                    e.preventDefault();
+                    window.gtag_report_conversion(WHATSAPP_LINK);
+                  }
+                }}
                 className="inline-flex items-center gap-3 border-2 border-white/80 text-white hover:bg-white hover:text-amber-600 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 group"
               >
                 <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
